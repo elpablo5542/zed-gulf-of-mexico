@@ -1,0 +1,157 @@
+{
+  "const const": {
+    "prefix": "cc",
+    "body": ["const const ${1:name} = ${2:value}!$0"],
+    "description": "const const – can't be changed in any way"
+  },
+  "const var": {
+    "prefix": "cv",
+    "body": ["const var ${1:name} = ${2:value}!$0"],
+    "description": "const var – can be edited, but not re-assigned"
+  },
+  "var const": {
+    "prefix": "vc",
+    "body": ["var const ${1:name} = ${2:value}!$0"],
+    "description": "var const – can be re-assigned, but not edited"
+  },
+  "var var": {
+    "prefix": "vv",
+    "body": ["var var ${1:name} = ${2:value}!$0"],
+    "description": "var var – can be re-assigned and edited"
+  },
+  "const const const": {
+    "prefix": "ccc",
+    "body": ["const const const ${1:name} = ${2:value}!$0"],
+    "description": "const const const – immutable, global, forever. Be careful"
+  },
+  "lifetime": {
+    "prefix": "life",
+    "body": ["const const ${1:name}<${2:2}> = ${3:value}!$0"],
+    "description": "declaration with a lifetime (lines, 20s, Infinity, -1 for hoisting)"
+  },
+  "function": {
+    "prefix": "fn",
+    "body": ["function ${1:name}(${2:params}) => {", "   $0", "}"],
+    "description": "function with a block body"
+  },
+  "function expression": {
+    "prefix": "fne",
+    "body": ["function ${1:name}(${2:params}) => ${3:expression}!$0"],
+    "description": "function with an expression body"
+  },
+  "async function": {
+    "prefix": "afn",
+    "body": ["async function ${1:name}(${2:params}) => {", "   $0", "}"],
+    "description": "async function – takes turns running lines with other async functions"
+  },
+  "arrow function": {
+    "prefix": "arrow",
+    "body": ["(${1:params}) => ${2:body}"],
+    "description": "arrow function"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "   $0", "}"],
+    "description": "if statement"
+  },
+  "if not": {
+    "prefix": "ifn",
+    "body": ["if (;${1:condition}) {", "   $0", "}"],
+    "description": "if not – the not operator is a semicolon"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else {", "   $0", "}"],
+    "description": "else branch"
+  },
+  "when": {
+    "prefix": "when",
+    "body": ["when (${1:condition}) {", "   $0", "}"],
+    "description": "when – runs each time a variable in the condition mutates"
+  },
+  "class": {
+    "prefix": "class",
+    "body": ["class ${1:Name} {", "   $0", "}"],
+    "description": "class – only one instance allowed"
+  },
+  "new": {
+    "prefix": "new",
+    "body": ["new ${1:Class}()"],
+    "description": "the one instance of a class"
+  },
+  "print": {
+    "prefix": "print",
+    "body": ["print(${1})!$0"],
+    "description": "print values to the console"
+  },
+  "debug": {
+    "prefix": "dbg",
+    "body": ["${1:expression}?$0"],
+    "description": "print debug info about this line"
+  },
+  "return": {
+    "prefix": "ret",
+    "body": ["return ${1:value}!$0"],
+    "description": "return a value"
+  },
+  "delete": {
+    "prefix": "del",
+    "body": ["delete ${1:value}!$0"],
+    "description": "delete a value or a keyword"
+  },
+  "reverse": {
+    "prefix": "rev",
+    "body": ["reverse!$0"],
+    "description": "reverse the direction of your code"
+  },
+  "signal": {
+    "prefix": "sig",
+    "body": ["const var [${1:getValue}, ${2:setValue}] = use(${3:0})!$0"],
+    "description": "signal split into a getter and a setter"
+  },
+  "file": {
+    "prefix": "file",
+    "body": ["===== ${1:main.gom} =====", "$0"],
+    "description": "start a new file"
+  },
+  "export": {
+    "prefix": "exp",
+    "body": ["export ${1:name} to \"${2:main.gom}\"!$0"],
+    "description": "export a name to a file"
+  },
+  "import": {
+    "prefix": "imp",
+    "body": ["import ${1:name}!$0"],
+    "description": "import a name that was exported to this file"
+  },
+  "interpolation": {
+    "prefix": "interp",
+    "body": ["\"${1:text} \\${${2:name}}\""],
+    "description": "string interpolation – use your regional currency"
+  },
+  "await next": {
+    "prefix": "next",
+    "body": ["await next ${1:name}"],
+    "description": "the next value of a variable – see into the future"
+  },
+  "previous": {
+    "prefix": "prev",
+    "body": ["previous ${1:name}"],
+    "description": "the previous value of a variable"
+  },
+  "addEventListener": {
+    "prefix": "on",
+    "body": ["addEventListener(\"${1:click}\", (${2:e}) => ${3})!$0"],
+    "description": "listen for an event (click, keydown, keyup come from stdin)"
+  },
+  "noop": {
+    "prefix": "noop",
+    "body": ["noop!$0"],
+    "description": "take up a line"
+  },
+  "dbx element": {
+    "prefix": "dbx",
+    "body": ["<${1:div} ${2:htmlClassName=\"${3:name}\"}>${4}</${1:div}>"],
+    "description": "DBX element – it's just HTML (use htmlClassName, not class)"
+  }
+}

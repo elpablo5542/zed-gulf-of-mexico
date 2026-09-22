@@ -1,0 +1,5 @@
+# Produced by cargo and by Zed when installing the dev extension
+/target/
+/extension.wasm
+/grammars/
+/Cargo.lock
