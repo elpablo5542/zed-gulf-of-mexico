@@ -1,5 +1,5 @@
 # AI DISCLAIMER
-This grammar is mostly written by AI (namely Claude Fable 5.1). 
+This extension is mostly written by AI (namely Claude Fable 5.1). 
 I can't be bothered to do this myself and i don't know rust.
 I am not forcing anyone to use this.
 I might rewrite this in the future, but for now it works and is good enough for me.
